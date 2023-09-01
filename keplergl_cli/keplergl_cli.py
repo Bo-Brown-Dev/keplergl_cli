@@ -67,6 +67,7 @@ class Visualize:
         if data is not None:
             self.add_data(data=data, names=names)
             self.html_path = self.render(read_only=read_only)
+        self.file_loc = file_loc
 
     def config(self, style=None):
         """Load kepler.gl config and insert Mapbox API Key"""
