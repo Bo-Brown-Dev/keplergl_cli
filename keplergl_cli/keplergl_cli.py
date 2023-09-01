@@ -50,6 +50,8 @@ class Visualize:
                 data is not None, then Visualize(data) will perform all steps,
                 including rendering and opening a browser.
         """
+        self.file_loc = file_loc
+
         super(Visualize, self).__init__()
 
         if api_key is not None:
@@ -67,7 +69,7 @@ class Visualize:
         if data is not None:
             self.add_data(data=data, names=names)
             self.html_path = self.render(read_only=read_only)
-        self.file_loc = file_loc
+
 
     def config(self, style=None):
         """Load kepler.gl config and insert Mapbox API Key"""
