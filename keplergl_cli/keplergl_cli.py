@@ -36,6 +36,7 @@ class Visualize:
     """
     def __init__(
             self,
+            file_loc,
             data=None,
             names=None,
             read_only=False,
@@ -142,11 +143,11 @@ class Visualize:
 
             self.map.add_data(data=datum, name=name)
 
-    def render(self, file_name, open_browser=True, read_only=False, center_map=True):
+    def render(self, open_browser=True, read_only=False, center_map=True):
         """Export kepler.gl map to HTML file and open in Chrome
         """
         # Generate path to a temporary file
-        path = os.path.join(file_name, '.html')
+        path = os.path.join(self.file_loc, '.html')
         self.map.save_to_html(file_name=path, read_only=read_only, center_map=center_map)
 
         # Open saved HTML file in new tab in default browser
