@@ -150,7 +150,7 @@ class Visualize:
         """Export kepler.gl map to HTML file and open in Chrome
         """
         # Generate path to a temporary file
-        path = os.path.join(self.file_loc, '.html')
+        path = self.file_loc
         self.map.save_to_html(file_name=path, read_only=read_only, center_map=center_map)
 
         # Open saved HTML file in new tab in default browser
